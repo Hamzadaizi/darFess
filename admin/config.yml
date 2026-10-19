@@ -5,6 +5,9 @@ backend:
 media_folder: "images"
 public_folder: "/images"
 
+site_url: https://astonishing-meerkat-a5b7c3.netlify.app
+display_url: https://astonishing-meerkat-a5b7c3.netlify.app
+
 collections:
   - name: "products"
     label: "Produits"
