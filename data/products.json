@@ -34,6 +34,12 @@
       "price": 450,
       "img": "",
       "active": true
+    },
+    {
+      "active": true,
+      "name": "bracelet",
+      "cat": "bouteille",
+      "price": 0
     }
   ]
 }
