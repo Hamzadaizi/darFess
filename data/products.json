@@ -1,9 +1,39 @@
 {
   "items": [
-    { "name": "Gourde cuivre pur 1 L", "cat": "bouteille", "price": 320, "img": "", "active": true },
-    { "name": "Bouteille martelée 750 ml", "cat": "bouteille", "price": 280, "img": "", "active": true },
-    { "name": "Set de 6 kissan martelés", "cat": "kissan", "price": 190, "img": "", "active": true },
-    { "name": "Bracelet manchette gravé", "cat": "bracelet", "price": 120, "img": "", "active": true },
-    { "name": "Plateau rond gravé 45 cm", "cat": "plateau", "price": 450, "img": "", "active": true }
+    {
+      "name": "Pack bouteille et 2 verre",
+      "cat": "bouteille",
+      "price": 320,
+      "img": "/images/uploads/packbouteille.jpeg",
+      "active": true
+    },
+    {
+      "name": "Bouteille martelée 750 ml",
+      "cat": "bouteille",
+      "price": 280,
+      "img": "",
+      "active": true
+    },
+    {
+      "name": "Set de 6 kissan martelés",
+      "cat": "kissan",
+      "price": 190,
+      "img": "",
+      "active": true
+    },
+    {
+      "name": "Bracelet manchette gravé",
+      "cat": "bracelet",
+      "price": 120,
+      "img": "",
+      "active": true
+    },
+    {
+      "name": "Plateau rond gravé 45 cm",
+      "cat": "plateau",
+      "price": 450,
+      "img": "",
+      "active": true
+    }
   ]
 }
