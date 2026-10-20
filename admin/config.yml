@@ -2,20 +2,33 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "images"
-public_folder: "/images"
-
-site_url: https://astonishing-meerkat-a5b7c3.netlify.app
-display_url: https://astonishing-meerkat-a5b7c3.netlify.app
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+locale: fr
 
 collections:
-  - name: "products"
-    label: "Produits"
+  - name: "boutique"
+    label: "Boutique"
     files:
-      - label: "Catalogue"
-        name: "catalogue"
-        file: "products.json"
+      - label: "Produits"
+        name: "produits"
+        file: "data/products.json"
         fields:
-          - label: Produits
-            name: products
-            widget: list
+          - label: "Produits"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.price}} DH"
+            fields:
+              - { label: "Nom", name: "name", widget: "string" }
+              - { label: "Catégorie", name: "cat", widget: "select", options: ["bouteille", "kissan", "bracelet", "plateau"] }
+              - { label: "Prix (DH)", name: "price", widget: "number", value_type: "int", min: 0 }
+              - { label: "Photo", name: "img", widget: "image", required: false }
+              - { label: "Disponible", name: "active", widget: "boolean", default: true }
+      - label: "Thème et infos"
+        name: "theme"
+        file: "data/settings.json"
+        fields:
+          - { label: "Couleur principale", name: "gold", widget: "color" }
+          - { label: "Couleur de fond", name: "bg", widget: "color" }
+          - { label: "Couleur du texte", name: "ink", widget: "color" }
+          - { label: "Numéro WhatsApp (212XXXXXXXXX)", name: "phone", widget: "string" }
