@@ -8,10 +8,10 @@
       "active": true
     },
     {
-      "name": "Bouteille martelée 750 ml",
+      "name": "Bouteille en cuivre 750 ml",
       "cat": "bouteille",
-      "price": 280,
-      "img": "",
+      "price": 199,
+      "img": "/images/uploads/bouteille.jpeg",
       "active": true
     },
     {
