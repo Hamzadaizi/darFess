@@ -1,17 +1,17 @@
 {
   "items": [
     {
-      "name": "Pack bouteille et 2 verre",
-      "cat": "bouteille",
-      "price": 499,
-      "img": "/images/uploads/packbouteille.jpeg",
-      "active": true
-    },
-    {
       "name": "Bouteille en cuivre 750 ml",
       "cat": "bouteille",
       "price": 199,
       "img": "/images/uploads/bouteille.jpeg",
+      "active": true
+    },
+    {
+      "name": "Pack bouteille et 2 verre",
+      "cat": "bouteille",
+      "price": 499,
+      "img": "/images/uploads/packbouteille.jpeg",
       "active": true
     },
     {
