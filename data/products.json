@@ -33,7 +33,7 @@
       "cat": "plateau",
       "price": 450,
       "img": "",
-      "active": true
+      "active": false
     }
   ]
 }
