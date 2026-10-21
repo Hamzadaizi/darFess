@@ -4,42 +4,29 @@
       "name": "Bouteille en cuivre 750 ml",
       "cat": "bouteille",
       "price": 199,
-      "img": "",
+      "img": "/images/uploads/bouteille.jpeg",
       "active": true
     },
     {
       "name": "Pack bouteille et 2 verre",
       "cat": "bouteille",
-      "price": 93,
-      "img": "",
+      "price": 499,
+      "img": "/images/uploads/packbouteille.jpeg",
       "active": true
     },
     {
-      "name": "verre",
+      "name": "2 verre",
       "cat": "kissan",
       "price": 310,
       "img": "/images/uploads/verre2.jpeg",
       "active": true
     },
     {
-      "name": "Bracelet manchette gravé",
-      "cat": "bracelet",
-      "price": 120,
-      "img": "",
-      "active": true
-    },
-    {
-      "name": "Plateau rond gravé 45 cm",
-      "cat": "plateau",
-      "price": 450,
-      "img": "",
-      "active": true
-    },
-    {
       "active": true,
       "name": "bracelet",
       "cat": "bouteille",
-      "price": 0
+      "price": 0,
+      "img": "/images/uploads/whatsapp-image-2026-10-21-at-02.09.02-1-.jpeg"
     }
   ]
 }
