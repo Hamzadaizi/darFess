@@ -8,9 +8,9 @@ locale: fr
 
 collections:
   - name: "boutique"
-    label: "Boutique"
+    label: "Ma boutique"
     files:
-      - label: "Produits"
+      - label: "1. Produits (ajouter, prix, photos)"
         name: "produits"
         file: "data/products.json"
         fields:
@@ -20,15 +20,51 @@ collections:
             summary: "{{fields.name}} — {{fields.price}} DH"
             fields:
               - { label: "Nom", name: "name", widget: "string" }
-              - { label: "Catégorie", name: "cat", widget: "select", options: ["bouteille", "kissan", "bracelet", "plateau"] }
+              - { label: "Catégorie", name: "cat", widget: "relation", collection: "boutique", file: "categories", search_fields: ["items.*.fr"], display_fields: ["items.*.fr"], value_field: "items.*.id" }
               - { label: "Prix (DH)", name: "price", widget: "number", value_type: "int", min: 0 }
               - { label: "Photo", name: "img", widget: "image", required: false }
               - { label: "Disponible", name: "active", widget: "boolean", default: true }
-      - label: "Thème et infos"
-        name: "theme"
-        file: "data/settings.json"
+      - label: "2. Catégories"
+        name: "categories"
+        file: "data/categories.json"
         fields:
-          - { label: "Couleur principale", name: "gold", widget: "color" }
+          - label: "Catégories"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.fr}}"
+            fields:
+              - { label: "Identifiant (minuscules, sans espace ni accent, ex: theiere)", name: "id", widget: "string", pattern: ["^[a-z0-9-]+$", "Minuscules, chiffres et tirets seulement"] }
+              - { label: "Nom en français", name: "fr", widget: "string" }
+              - { label: "Nom en arabe", name: "ar", widget: "string", required: false }
+      - label: "3. Infos boutique (nom, WhatsApp, logo)"
+        name: "shop"
+        file: "data/shop.json"
+        fields:
+          - { label: "Nom de la boutique", name: "shop_name", widget: "string" }
+          - { label: "Numéro WhatsApp (212XXXXXXXXX)", name: "phone", widget: "string" }
+          - { label: "Ville (pied de page)", name: "city", widget: "string", required: false }
+          - { label: "Logo (remplace le nom en haut)", name: "logo", widget: "image", required: false }
+          - { label: "Image d'accueil (remplace le motif)", name: "hero_image", widget: "image", required: false }
+      - label: "4. Couleurs et police"
+        name: "theme"
+        file: "data/theme.json"
+        fields:
+          - { label: "Couleur principale (boutons, prix)", name: "gold", widget: "color" }
           - { label: "Couleur de fond", name: "bg", widget: "color" }
           - { label: "Couleur du texte", name: "ink", widget: "color" }
-          - { label: "Numéro WhatsApp (212XXXXXXXXX)", name: "phone", widget: "string" }
+          - { label: "Mode sombre : couleur principale", name: "gold_d", widget: "color", required: false }
+          - { label: "Mode sombre : fond", name: "bg_d", widget: "color", required: false }
+          - { label: "Mode sombre : texte", name: "ink_d", widget: "color", required: false }
+          - { label: "Police des titres", name: "font_title", widget: "select", options: ["Cormorant Garamond", "Playfair Display", "Cinzel", "Lora", "Amiri"], default: "Cormorant Garamond" }
+      - label: "5. Textes du site"
+        name: "texts"
+        file: "data/texts.json"
+        fields:
+          - { label: "Titre d'accueil (FR)", name: "hero_title", widget: "string", required: false }
+          - { label: "Titre d'accueil (AR)", name: "hero_title_ar", widget: "string", required: false }
+          - { label: "Texte d'accueil (FR)", name: "hero_text", widget: "text", required: false }
+          - { label: "Texte d'accueil (AR)", name: "hero_text_ar", widget: "text", required: false }
+          - { label: "Titre « Notre savoir-faire » (FR)", name: "about_title", widget: "string", required: false }
+          - { label: "Titre « Notre savoir-faire » (AR)", name: "about_title_ar", widget: "string", required: false }
+          - { label: "Texte « Notre savoir-faire » (FR)", name: "about_text", widget: "text", required: false }
+          - { label: "Texte « Notre savoir-faire » (AR)", name: "about_text_ar", widget: "text", required: false }
