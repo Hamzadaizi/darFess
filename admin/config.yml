@@ -23,6 +23,11 @@ collections:
               - { label: "Catégorie", name: "cat", widget: "relation", collection: "boutique", file: "categories", search_fields: ["items.*.fr"], display_fields: ["items.*.fr"], value_field: "items.*.id" }
               - { label: "Prix (DH)", name: "price", widget: "number", value_type: "int", min: 0 }
               - { label: "Photo", name: "img", widget: "image", required: false }
+              - { label: "Ancien prix barré (DH, optionnel : affiche Promo et le pourcentage)", name: "old_price", widget: "number", value_type: "int", min: 0, required: false }
+              - { label: "Étiquette", name: "badge", widget: "select", required: false, default: "", options: [{ label: "Aucune", value: "" }, { label: "Nouveau", value: "new" }, { label: "Promo", value: "promo" }, { label: "Dernières pièces", value: "last" }] }
+              - { label: "Description", name: "desc", widget: "text", required: false }
+              - { label: "Dimensions / taille (ex: 25 cm, 1 L)", name: "size", widget: "string", required: false }
+              - { label: "Photos supplémentaires", name: "gallery", widget: "list", required: false, field: { label: "Photo", name: "image", widget: "image" } }
               - { label: "Disponible", name: "active", widget: "boolean", default: true }
       - label: "2. Catégories"
         name: "categories"
@@ -68,3 +73,29 @@ collections:
           - { label: "Titre « Notre savoir-faire » (AR)", name: "about_title_ar", widget: "string", required: false }
           - { label: "Texte « Notre savoir-faire » (FR)", name: "about_text", widget: "text", required: false }
           - { label: "Texte « Notre savoir-faire » (AR)", name: "about_text_ar", widget: "text", required: false }
+      - label: "6. Avis clients (vrais avis seulement)"
+        name: "reviews"
+        file: "data/reviews.json"
+        fields:
+          - label: "Avis"
+            name: "items"
+            widget: "list"
+            required: false
+            summary: "{{fields.name}} — {{fields.rating}}/5"
+            fields:
+              - { label: "Prénom", name: "name", widget: "string" }
+              - { label: "Ville", name: "city", widget: "string", required: false }
+              - { label: "Note (1 à 5)", name: "rating", widget: "number", value_type: "int", min: 1, max: 5, default: 5 }
+              - { label: "Avis", name: "text", widget: "text" }
+      - label: "7. Barre d'annonce, contact et réseaux"
+        name: "extras"
+        file: "data/extras.json"
+        fields:
+          - { label: "Afficher la barre d'annonce", name: "announce_on", widget: "boolean", default: true }
+          - { label: "Annonce (FR)", name: "announce_fr", widget: "string", required: false }
+          - { label: "Annonce (AR)", name: "announce_ar", widget: "string", required: false }
+          - { label: "Adresse de l'atelier", name: "address", widget: "string", required: false }
+          - { label: "Horaires", name: "hours", widget: "string", required: false }
+          - { label: "Lien Instagram (https://...)", name: "instagram", widget: "string", required: false }
+          - { label: "Lien Facebook (https://...)", name: "facebook", widget: "string", required: false }
+          - { label: "Lien TikTok (https://...)", name: "tiktok", widget: "string", required: false }
