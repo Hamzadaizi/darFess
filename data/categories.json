@@ -1,0 +1,8 @@
+{
+  "items": [
+    { "id": "bouteille", "fr": "Bouteilles", "ar": "قنينات" },
+    { "id": "kissan", "fr": "Kissan", "ar": "كيسان" },
+    { "id": "bracelet", "fr": "Bracelets", "ar": "أساور" },
+    { "id": "plateau", "fr": "Plateaux", "ar": "صواني" }
+  ]
+}
