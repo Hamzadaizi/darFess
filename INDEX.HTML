@@ -99,6 +99,11 @@ dialog::backdrop{background:rgba(0,0,0,.55)}
 #fab{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom,0px));inset-inline-end:16px;z-index:7;width:54px;height:54px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 4px 14px rgba(0,0,0,.3)}
 #fsoc a{margin-inline-end:6px}
 @media(max-width:760px){.pmg{grid-template-columns:1fr}}
+.vid video,.vid iframe{width:100%;max-width:760px;aspect-ratio:16/9;display:block;margin:0 auto;border:0;background:#000}
+.vid.v9 video,.vid.v9 iframe{aspect-ratio:9/16;max-width:380px;max-height:80vh}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px}
+.steps>div{background:var(--surface);border:1px solid var(--line);padding:18px}
+.steps b{display:block;font-family:var(--ft);font-size:1.6rem;color:var(--gold)}
 </style>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
@@ -120,16 +125,16 @@ if(window.netlifyIdentity){window.netlifyIdentity.on("init",function(u){if(!u){w
 <div class="wrap hero">
 <div>
 <h1 data-i="h1">Le cuivre martelé à la main, pour votre table et votre poignet.</h1>
-<p data-i="hp">Soie, velours et broderie au fil d’or, travaillés par nos maâlems à Fès et Marrakech. Livraison partout au Maroc.</p>
+<p data-i="hp">Bouteilles, kissan, bracelets et plateaux en cuivre pur, gravés par nos artisans à Fès. Livraison partout au Maroc.</p>
 <div class="cta"><a class="btn" href="#collection" data-i="c1">Voir la collection</a><a class="btn ghost" id="wa1" href="#" data-i="c2">Conseil par WhatsApp</a></div>
 </div>
 <div class="arch" id="heroimg" role="img" aria-label="Motif cuivre gravé"></div>
 </div>
 <div class="wrap perks">
-<div><b data-i="p1">Fait main</b><span data-i="p1d">Chaque pièce brodée point par point.</span></div>
-<div><b data-i="p2">Matières nobles</b><span data-i="p2d">Soie, velours et fil d’or véritables.</span></div>
-<div><b data-i="p3">Livraison au Maroc</b><span data-i="p3d">Coffret protégé, suivi par WhatsApp.</span></div>
-<div><b data-i="p4">Sur-mesure</b><span data-i="p4d">Tissu, broderie et coupe à votre goût.</span></div>
+<div><b data-i="p1">Cuivre pur</b><span data-i="p1d">Du vrai cuivre, martelé et gravé à la main.</span></div>
+<div><b data-i="p2">Pièces uniques</b><span data-i="p2d">Chaque motif est différent.</span></div>
+<div><b data-i="p3">Livraison au Maroc</b><span data-i="p3d">Emballage protégé, suivi par WhatsApp.</span></div>
+<div><b data-i="p4">Gravure sur demande</b><span data-i="p4d">Prénom ou motif de votre choix.</span></div>
 </div>
 
 <section id="collection"><div class="wrap">
@@ -139,6 +144,27 @@ if(window.netlifyIdentity){window.netlifyIdentity.on("init",function(u){if(!u){w
 <div class="grid" id="grid"></div>
 </div></section>
 
+<section id="video" hidden><div class="wrap">
+<h2 id="vt"></h2>
+<p class="sub" id="vs"></p>
+<div class="vid" id="vbox"></div>
+</div></section>
+
+<section id="steps"><div class="wrap">
+<h2 data-i="st">Comment commander</h2>
+<div class="steps">
+<div><b>1</b><span data-i="s1">Choisissez vos pièces et ajoutez-les au panier.</span></div>
+<div><b>2</b><span data-i="s2">Envoyez votre commande par WhatsApp en un clic.</span></div>
+<div><b>3</b><span data-i="s3">Nous confirmons, préparons et expédions votre colis.</span></div>
+</div>
+<h2 data-i="ct" style="margin-top:44px">Entretien du cuivre</h2>
+<div class="steps">
+<div><b>✦</b><span data-i="ct1">Nettoyez avec un citron et du sel, rincez, puis séchez bien.</span></div>
+<div><b>✦</b><span data-i="ct2">Bouteilles et verres : eau plate uniquement. Évitez les boissons acides ou très chaudes.</span></div>
+<div><b>✦</b><span data-i="ct3">Ne laissez pas l’eau stagner longtemps. Videz et rincez après usage.</span></div>
+</div>
+</div></section>
+
 <section id="avis" hidden><div class="wrap">
 <h2 data-i="rv">Avis de nos clients</h2>
 <p class="sub" data-i="rvs">Ce qu’ils disent de nos pièces.</p>
@@ -146,16 +172,16 @@ if(window.netlifyIdentity){window.netlifyIdentity.on("init",function(u){if(!u){w
 </div></section>
 
 <div class="custom">
-<h2 data-i="h3">Une pièce sur-mesure ?</h2>
-<p data-i="h3p">Dites-nous la couleur, le tissu et l’occasion. Nous vous répondons avec un devis.</p>
+<h2 data-i="h3">Une gravure personnalisée ?</h2>
+<p data-i="h3p">Dites-nous la pièce et le texte à graver. Nous vous répondons avec un devis.</p>
 <a class="btn" id="wa2" href="#" data-i="c3">Demander un devis</a>
 </div>
 
 <section id="heritage"><div class="wrap about">
 <div class="arch" style="max-width:340px" role="img" aria-label="Motif"></div>
 <div>
-<h2 style="font-size:2.4rem" data-i="h4">Le Maroc dans chaque point d’aiguille</h2>
-<p data-i="h4p">Dar Nhass est née d’un amour des arts traditionnels : broderie tarz fassi, sfifa, aqqad et randa. Nous choisissons des étoffes fines pour que chaque tenue soit un moment de fierté.</p>
+<h2 style="font-size:2.4rem" data-i="h4">Un savoir-faire de Fès</h2>
+<p data-i="h4p">Dar Nhass travaille le cuivre comme on le fait depuis des siècles : martelage, gravure et patine à la main. Chaque pièce garde la trace de l’artisan qui l’a faite.</p>
 </div></div></section>
 </main>
 
@@ -183,8 +209,8 @@ if(window.netlifyIdentity){window.netlifyIdentity.on("init",function(u){if(!u){w
 
 <script>
 var PHONE="212645274499";
-var TX={fr:{n1:"Collection",n2:"Notre atelier",cart:"Panier",h1:"Le cuivre martelé à la main, pour votre table et votre poignet.",hp:"Bouteilles, kissan, bracelets et plateaux en cuivre pur, gravés par nos artisans à Fès. Livraison partout au Maroc.",c1:"Voir la collection",c2:"Conseil par WhatsApp",p1:"Cuivre pur",p1d:"Du vrai cuivre, martelé et gravé à la main.",p2:"Pièces uniques",p2d:"Chaque motif est différent.",p3:"Livraison au Maroc",p3d:"Emballage protégé, suivi par WhatsApp.",p4:"Gravure sur demande",p4d:"Prénom ou motif de votre choix.",h2:"La collection",sub:"Choisissez une catégorie, ajoutez au panier, commandez par WhatsApp.",h3:"Une gravure personnalisée ?",h3p:"Dites-nous la pièce et le texte à graver. Nous vous répondons avec un devis.",c3:"Demander un devis",h4:"Un savoir-faire de Fès",h4p:"Dar Nhass travaille le cuivre comme on le fait depuis des siècles : martelage, gravure et patine à la main. Chaque pièce garde la trace de l’artisan qui l’a faite.",fd:"Bouteilles, kissan, bracelets et plateaux en cuivre.",nw:"Nouveau",pm:"Promo",ls:"Dernières pièces",buy:"Commander ce produit",dim:"Dimensions",rv:"Avis de nos clients",rvs:"Ce qu’ils disent de nos pièces.",fl:"Suivez-nous",yours:"Votre sélection",order:"Commander par WhatsApp",all:"Tout",add:"Ajouter",empty:"Votre panier est vide. Ajoutez une pièce pour commencer.",name:"Nom complet",tel:"Téléphone",city:"Ville",need:"Ajoutez une pièce et remplissez nom, téléphone et ville.",hello:"Bonjour Dar Nhass, je souhaite commander :",wa1:"Bonjour, je souhaite un conseil.",wa2:"Bonjour, je souhaite un devis pour une gravure personnalisée.",cats:{bouteille:"Bouteilles",kissan:"Kissan",bracelet:"Bracelets",plateau:"Plateaux"}},
-ar:{n1:"المجموعة",n2:"ورشتنا",cart:"السلة",h1:"نحاس مطروق يدوياً، لمائدتك ولمعصمك.",hp:"قنينات وكيسان وأساور وصواني من النحاس الخالص، منقوشة بأيدي حرفيينا في فاس. التوصيل لجميع أنحاء المغرب.",c1:"شاهد المجموعة",c2:"استشارة عبر واتساب",p1:"نحاس خالص",p1d:"نحاس حقيقي، مطروق ومنقوش يدوياً.",p2:"قطع فريدة",p2d:"كل نقش مختلف.",p3:"التوصيل داخل المغرب",p3d:"تغليف محمي وتتبع عبر واتساب.",p4:"نقش حسب الطلب",p4d:"اسم أو زخرفة من اختيارك.",h2:"المجموعة",sub:"اختر فئة، أضف إلى السلة، واطلب عبر واتساب.",h3:"تريد نقشاً خاصاً؟",h3p:"أخبرنا بالقطعة والنص المراد نقشه، وسنرسل لك عرض سعر.",c3:"اطلب عرض سعر",h4:"حرفة من فاس",h4p:"دار النحاس تعمل بالنحاس كما كان يُعمل منذ قرون: طرق ونقش وتعتيق باليد. كل قطعة تحمل أثر الصانع الذي صنعها.",fd:"قنينات وكيسان وأساور وصواني من النحاس.",nw:"جديد",pm:"تخفيض",ls:"آخر القطع",buy:"اطلب هذه القطعة",dim:"الأبعاد",rv:"آراء زبنائنا",rvs:"ما يقولونه عن قطعنا.",fl:"تابعنا",yours:"اختيارك",order:"اطلب عبر واتساب",all:"الكل",add:"أضف",empty:"سلتك فارغة. أضف قطعة للبدء.",name:"الاسم الكامل",tel:"الهاتف",city:"المدينة",need:"أضف قطعة واملأ الاسم والهاتف والمدينة.",hello:"السلام عليكم دار النحاس، أرغب في طلب:",wa1:"السلام عليكم، أرغب في استشارة.",wa2:"السلام عليكم، أرغب في عرض سعر لنقش خاص.",cats:{bouteille:"قنينات",kissan:"كيسان",bracelet:"أساور",plateau:"صواني"}}};
+var TX={fr:{n1:"Collection",n2:"Notre atelier",cart:"Panier",h1:"Le cuivre martelé à la main, pour votre table et votre poignet.",hp:"Bouteilles, kissan, bracelets et plateaux en cuivre pur, gravés par nos artisans à Fès. Livraison partout au Maroc.",c1:"Voir la collection",c2:"Conseil par WhatsApp",p1:"Cuivre pur",p1d:"Du vrai cuivre, martelé et gravé à la main.",p2:"Pièces uniques",p2d:"Chaque motif est différent.",p3:"Livraison au Maroc",p3d:"Emballage protégé, suivi par WhatsApp.",p4:"Gravure sur demande",p4d:"Prénom ou motif de votre choix.",h2:"La collection",sub:"Choisissez une catégorie, ajoutez au panier, commandez par WhatsApp.",h3:"Une gravure personnalisée ?",h3p:"Dites-nous la pièce et le texte à graver. Nous vous répondons avec un devis.",c3:"Demander un devis",h4:"Un savoir-faire de Fès",h4p:"Dar Nhass travaille le cuivre comme on le fait depuis des siècles : martelage, gravure et patine à la main. Chaque pièce garde la trace de l’artisan qui l’a faite.",fd:"Bouteilles, kissan, bracelets et plateaux en cuivre.",nw:"Nouveau",pm:"Promo",ls:"Dernières pièces",buy:"Commander ce produit",dim:"Dimensions",rv:"Avis de nos clients",rvs:"Ce qu’ils disent de nos pièces.",fl:"Suivez-nous",st:"Comment commander",s1:"Choisissez vos pièces et ajoutez-les au panier.",s2:"Envoyez votre commande par WhatsApp en un clic.",s3:"Nous confirmons, préparons et expédions votre colis.",ct:"Entretien du cuivre",ct1:"Nettoyez avec un citron et du sel, rincez, puis séchez bien.",ct2:"Bouteilles et verres : eau plate uniquement. Évitez les boissons acides ou très chaudes.",ct3:"Ne laissez pas l’eau stagner longtemps. Videz et rincez après usage.",yours:"Votre sélection",order:"Commander par WhatsApp",all:"Tout",add:"Ajouter",empty:"Votre panier est vide. Ajoutez une pièce pour commencer.",name:"Nom complet",tel:"Téléphone",city:"Ville",need:"Ajoutez une pièce et remplissez nom, téléphone et ville.",hello:"Bonjour Dar Nhass, je souhaite commander :",wa1:"Bonjour, je souhaite un conseil.",wa2:"Bonjour, je souhaite un devis pour une gravure personnalisée.",cats:{bouteille:"Bouteilles",kissan:"Kissan",bracelet:"Bracelets",plateau:"Plateaux"}},
+ar:{n1:"المجموعة",n2:"ورشتنا",cart:"السلة",h1:"نحاس مطروق يدوياً، لمائدتك ولمعصمك.",hp:"قنينات وكيسان وأساور وصواني من النحاس الخالص، منقوشة بأيدي حرفيينا في فاس. التوصيل لجميع أنحاء المغرب.",c1:"شاهد المجموعة",c2:"استشارة عبر واتساب",p1:"نحاس خالص",p1d:"نحاس حقيقي، مطروق ومنقوش يدوياً.",p2:"قطع فريدة",p2d:"كل نقش مختلف.",p3:"التوصيل داخل المغرب",p3d:"تغليف محمي وتتبع عبر واتساب.",p4:"نقش حسب الطلب",p4d:"اسم أو زخرفة من اختيارك.",h2:"المجموعة",sub:"اختر فئة، أضف إلى السلة، واطلب عبر واتساب.",h3:"تريد نقشاً خاصاً؟",h3p:"أخبرنا بالقطعة والنص المراد نقشه، وسنرسل لك عرض سعر.",c3:"اطلب عرض سعر",h4:"حرفة من فاس",h4p:"دار النحاس تعمل بالنحاس كما كان يُعمل منذ قرون: طرق ونقش وتعتيق باليد. كل قطعة تحمل أثر الصانع الذي صنعها.",fd:"قنينات وكيسان وأساور وصواني من النحاس.",nw:"جديد",pm:"تخفيض",ls:"آخر القطع",buy:"اطلب هذه القطعة",dim:"الأبعاد",rv:"آراء زبنائنا",rvs:"ما يقولونه عن قطعنا.",fl:"تابعنا",st:"كيف تطلب",s1:"اختر قطعك وأضفها إلى السلة.",s2:"أرسل طلبك عبر واتساب بنقرة واحدة.",s3:"نؤكد الطلب ونجهزه ونرسله إليك.",ct:"العناية بالنحاس",ct1:"نظفه بالليمون والملح، اشطفه ثم جففه جيداً.",ct2:"للقنينات والكؤوس: ماء عادي فقط. تجنب المشروبات الحامضة أو الساخنة جداً.",ct3:"لا تترك الماء مدة طويلة داخل القطعة. أفرغها واشطفها بعد الاستعمال.",yours:"اختيارك",order:"اطلب عبر واتساب",all:"الكل",add:"أضف",empty:"سلتك فارغة. أضف قطعة للبدء.",name:"الاسم الكامل",tel:"الهاتف",city:"المدينة",need:"أضف قطعة واملأ الاسم والهاتف والمدينة.",hello:"السلام عليكم دار النحاس، أرغب في طلب:",wa1:"السلام عليكم، أرغب في استشارة.",wa2:"السلام عليكم، أرغب في عرض سعر لنقش خاص.",cats:{bouteille:"قنينات",kissan:"كيسان",bracelet:"أساور",plateau:"صواني"}}};
 var P=[
 {id:1,n:"Gourde cuivre pur 1 L",cat:"bouteille",p:320,a:"#d28a55",b:"#7a3a1a"},
 {id:2,n:"Bouteille martelée 750 ml",cat:"bouteille",p:280,a:"#c97b45",b:"#5e2d14"},
@@ -195,7 +221,7 @@ var P=[
 {id:7,n:"Plateau rond gravé 45 cm",cat:"plateau",p:450,a:"#d9935c",b:"#6e3519"},
 {id:8,n:"Plateau ovale martelé",cat:"plateau",p:520,a:"#bf6d38",b:"#48200d"}];
 var CATS=[{id:"bouteille",fr:"Bouteilles",ar:"قنينات"},{id:"kissan",fr:"Kissan",ar:"كيسان"},{id:"bracelet",fr:"Bracelets",ar:"أساور"},{id:"plateau",fr:"Plateaux",ar:"صواني"}];
-var ANN={on:false,fr:"",ar:""},REV=[],EX={};
+var ANN={on:false,fr:"",ar:""},REV=[],EX={},VID={};
 var L="fr",F="all",cart={};
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
 function pc(p){return(p.old>p.p?'<s style="color:var(--mute);font-size:.85rem;margin-inline-end:6px">'+money(p.old)+'</s>':"")+'<span class="price">'+money(p.p)+'</span>'}
@@ -204,6 +230,15 @@ function rev(){var s=$("#avis");s.hidden=!REV.length;$("#rg").innerHTML=REV.map(
 function foot(){var h=[];if(EX.city)h.push(esc(EX.city));if(EX.address)h.push(esc(EX.address));if(EX.hours)h.push(esc(EX.hours));$("#fcont").innerHTML=h.join("<br>");
 var l=[["instagram","Instagram"],["facebook","Facebook"],["tiktok","TikTok"]].filter(function(x){return/^https?:\/\//.test(EX[x[0]]||"")}).map(function(x){return'<a href="'+esc(EX[x[0]])+'" target="_blank" rel="noopener">'+x[1]+'</a>'});
 $("#fsoc").innerHTML=l.length?"<b>"+TX[L].fl+"</b><br>"+l.join(" · "):""}
+function ytId(u){var m=String(u||"").match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/);return m?m[1]:""}
+function vid(){var v=VID,s=$("#video"),y=ytId(v.youtube),k=(v.file||"")+y;
+if(!k){s.hidden=true;return}
+s.hidden=false;
+$("#vt").textContent=(L==="ar"&&v.title_ar?v.title_ar:v.title)||"";
+$("#vs").textContent=(L==="ar"&&v.sub_ar?v.sub_ar:v.sub)||"";
+var b=$("#vbox");
+if(b.dataset.k!==k){b.dataset.k=k;b.className="vid"+(v.vertical?" v9":"");
+b.innerHTML=v.file?'<video controls playsinline preload="metadata" src="'+esc(v.file)+'"'+(v.poster?' poster="'+esc(v.poster)+'"':"")+'></video>':'<iframe src="https://www.youtube-nocookie.com/embed/'+y+'" title="Video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe>'}}
 function openProd(id){var p=byId(id),t=TX[L];if(!p)return;var g=[p.img].concat(p.gal||[]).filter(Boolean);
 $("#pmc").innerHTML='<div class="pmg"><button class="chip pmx" data-x="1" aria-label="Fermer">✕</button><div><div class="pmi" id="pmi" style="background:'+sw(p)+'">'+(g[0]?'<img src="'+esc(g[0])+'" alt="'+esc(p.n)+'">':"")+bd(p)+'</div>'+(g.length>1?'<div class="pmt">'+g.map(function(u){return'<button data-g="'+esc(u)+'"><img src="'+esc(u)+'" alt=""></button>'}).join("")+'</div>':"")+'</div><div class="pmd"><span class="cat">'+cn(p.cat)+'</span><h2>'+esc(p.n)+'</h2><div style="font-size:1.4rem;margin:8px 0">'+pc(p)+'</div>'+(p.desc?'<p>'+esc(p.desc)+'</p>':"")+(p.size?'<p><b>'+t.dim+' :</b> '+esc(p.size)+'</p>':"")+'<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px"><button class="btn" data-b="'+p.id+'">'+t.buy+'</button><button class="btn ghost" data-a="'+p.id+'">'+t.add+'</button></div></div></div>';
 $("#pm").showModal()}
@@ -223,7 +258,7 @@ w1.href="https://api.whatsapp.com/send?phone="+PHONE+"&text="+encodeURIComponent
 w2.href="https://api.whatsapp.com/send?phone="+PHONE+"&text="+encodeURIComponent(t.wa2);
 var an=$("#ann"),at=L==="ar"&&ANN.ar?ANN.ar:ANN.fr;an.textContent=at;an.hidden=!(ANN.on&&at);
 $("#fab").href="https://api.whatsapp.com/send?phone="+PHONE+"&text="+encodeURIComponent(t.wa1);
-rev();foot();
+rev();foot();vid();
 draw();render()}
 function draw(){var t=TX[L],cs=["all"].concat(CATS.map(function(c){return c.id}));
 $("#filters").innerHTML=cs.map(function(c){return'<button class="chip" data-c="'+c+'" aria-pressed="'+(F===c)+'">'+(c==="all"?t.all:cn(c))+'</button>'}).join("");
@@ -254,15 +289,15 @@ var sum=0,lines=ids.map(function(i){var p=byId(i);sum+=cart[i]*p.p;return"• "+
 var txt=t.hello+"\n"+lines.join("\n")+"\nTotal : "+money(sum)+"\n\n"+nm+" | "+ph+" | "+ct;
 $("#msg").textContent="";
 window.open("https://api.whatsapp.com/send?phone="+PHONE+"&text="+encodeURIComponent(txt),"_blank")};
-Promise.all(["products","categories","shop","theme","texts","extras","reviews"].map(function(n){return fetch("data/"+n+".json").then(function(r){return r.json()}).catch(function(){return null})})).then(function(a){
-var ex=a[5]||{},rv=a[6],pr=a[0],ct=a[1],s=Object.assign({},a[2],a[3],a[4]),dk=matchMedia("(prefers-color-scheme: dark)").matches,rs=document.documentElement.style;
+Promise.all(["products","categories","shop","theme","texts","extras","reviews","video"].map(function(n){return fetch("data/"+n+".json").then(function(r){return r.json()}).catch(function(){return null})})).then(function(a){
+var ex=a[5]||{},rv=a[6],vd=a[7]||{},pr=a[0],ct=a[1],s=Object.assign({},a[2],a[3],a[4]),dk=matchMedia("(prefers-color-scheme: dark)").matches,rs=document.documentElement.style;
 if(s.phone)PHONE=s.phone;
 [["gold","--gold"],["bg","--bg"],["ink","--ink"]].forEach(function(m){var v=dk?s[m[0]+"_d"]:s[m[0]];if(v)rs.setProperty(m[1],v)});
 if(s.font_title){var l=document.createElement("link");l.rel="stylesheet";l.href="https://fonts.googleapis.com/css2?family="+s.font_title.replace(/ /g,"+")+":wght@500;600&display=swap";document.head.appendChild(l);rs.setProperty("--ft","'"+s.font_title+"',Georgia,serif")}
 if(s.shop_name){$("#logo").textContent=s.shop_name;$("#fname").textContent=s.shop_name;$("#fname2").textContent=s.shop_name;document.title=s.shop_name}
 if(s.logo)$("#logo").innerHTML='<img src="'+s.logo+'" alt="'+(s.shop_name||"")+'" style="height:38px;display:block">';
 if(s.hero_image)$("#heroimg").style.background='url("'+s.hero_image+'") center/cover';
-EX={city:s.city,address:ex.address,hours:ex.hours,instagram:ex.instagram,facebook:ex.facebook,tiktok:ex.tiktok};ANN={on:ex.announce_on!==false&&!!ex.announce_fr,fr:ex.announce_fr||"",ar:ex.announce_ar||""};if(rv&&rv.items)REV=rv.items;
+EX={city:s.city,address:ex.address,hours:ex.hours,instagram:ex.instagram,facebook:ex.facebook,tiktok:ex.tiktok};ANN={on:ex.announce_on!==false&&!!ex.announce_fr,fr:ex.announce_fr||"",ar:ex.announce_ar||""};if(rv&&rv.items)REV=rv.items;VID=vd;
 [["h1","hero_title"],["hp","hero_text"],["h4","about_title"],["h4p","about_text"]].forEach(function(m){if(s[m[1]])TX.fr[m[0]]=s[m[1]];if(s[m[1]+"_ar"])TX.ar[m[0]]=s[m[1]+"_ar"]});
 if(ct&&ct.items&&ct.items.length)CATS=ct.items;
 if(pr&&pr.items&&pr.items.length){P=pr.items.filter(function(x){return x.active!==false}).map(function(x,i){return{id:i+1,n:x.name,cat:x.cat,p:Number(x.price),old:Number(x.old_price)||0,badge:x.badge,desc:x.desc,size:x.size,img:x.img,gal:x.gallery||[],a:"#d28a55",b:"#6b3318"}});cart={}}
