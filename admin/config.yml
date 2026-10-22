@@ -99,3 +99,15 @@ collections:
           - { label: "Lien Instagram (https://...)", name: "instagram", widget: "string", required: false }
           - { label: "Lien Facebook (https://...)", name: "facebook", widget: "string", required: false }
           - { label: "Lien TikTok (https://...)", name: "tiktok", widget: "string", required: false }
+      - label: "8. Vidéo (YouTube ou fichier mp4)"
+        name: "video"
+        file: "data/video.json"
+        fields:
+          - { label: "Titre de la section (FR)", name: "title", widget: "string", required: false }
+          - { label: "Titre de la section (AR)", name: "title_ar", widget: "string", required: false }
+          - { label: "Sous-titre (FR)", name: "sub", widget: "string", required: false }
+          - { label: "Sous-titre (AR)", name: "sub_ar", widget: "string", required: false }
+          - { label: "Lien YouTube (https://youtu.be/...)", name: "youtube", widget: "string", required: false }
+          - { label: "OU fichier vidéo mp4 (moins de 20 Mo, prioritaire sur YouTube)", name: "file", widget: "file", required: false }
+          - { label: "Image de couverture du mp4", name: "poster", widget: "image", required: false }
+          - { label: "Vidéo verticale (téléphone 9:16)", name: "vertical", widget: "boolean", default: false }
