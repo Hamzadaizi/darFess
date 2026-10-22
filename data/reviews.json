@@ -1,1 +1,19 @@
-{ "items": [] }
+{
+  "items": [
+    {
+      "rating": 5,
+      "text": "TOP 5/5",
+      "name": "MARWANE"
+    },
+    {
+      "rating": 5,
+      "name": "HAMZA",
+      "text": "TOP"
+    },
+    {
+      "rating": 5,
+      "name": "NONO",
+      "text": "MERCI"
+    }
+  ]
+}
