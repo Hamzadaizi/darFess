@@ -1,0 +1,7 @@
+{
+  "tiers": [
+    { "qty": 2, "percent": 5 },
+    { "qty": 3, "percent": 8 },
+    { "qty": 6, "percent": 12 }
+  ]
+}
