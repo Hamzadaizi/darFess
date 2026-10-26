@@ -6,7 +6,7 @@
       "ar": "قنينات",
       "en": "Bottles",
       "image": "/images/uploads/bouteille.jpeg",
-      "soon": false
+      "soon": true
     },
     {
       "id": "kissan",
