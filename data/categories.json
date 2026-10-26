@@ -1,8 +1,8 @@
 {
   "items": [
-    { "id": "bouteille", "fr": "Bouteilles", "ar": "قنينات" },
-    { "id": "kissan", "fr": "Kissan", "ar": "كيسان" },
-    { "id": "bracelet", "fr": "Bracelets", "ar": "أساور" },
-    { "id": "plateau", "fr": "Plateaux", "ar": "صواني" }
+    { "id": "bouteille", "fr": "Bouteilles", "ar": "قنينات", "en": "Bottles", "image": "", "soon": false },
+    { "id": "kissan", "fr": "Kissan", "ar": "كيسان", "en": "Tea glasses", "image": "", "soon": false },
+    { "id": "bracelet", "fr": "Bracelets", "ar": "أساور", "en": "Bracelets", "image": "", "soon": false },
+    { "id": "plateau", "fr": "Plateaux", "ar": "صواني", "en": "Trays", "image": "", "soon": false }
   ]
 }
