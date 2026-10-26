@@ -41,6 +41,9 @@ collections:
               - { label: "Identifiant (minuscules, sans espace ni accent, ex: theiere)", name: "id", widget: "string", pattern: ["^[a-z0-9-]+$", "Minuscules, chiffres et tirets seulement"] }
               - { label: "Nom en français", name: "fr", widget: "string" }
               - { label: "Nom en arabe", name: "ar", widget: "string", required: false }
+              - { label: "Nom en anglais", name: "en", widget: "string", required: false }
+              - { label: "Photo de la catégorie (grande tuile sur l'accueil)", name: "image", widget: "image", required: false }
+              - { label: "Bientôt disponible (pas encore de produits)", name: "soon", widget: "boolean", default: false }
       - label: "3. Infos boutique (nom, WhatsApp, logo)"
         name: "shop"
         file: "data/shop.json"
@@ -50,6 +53,7 @@ collections:
           - { label: "Ville (pied de page)", name: "city", widget: "string", required: false }
           - { label: "Logo (remplace le nom en haut)", name: "logo", widget: "image", required: false }
           - { label: "Image d'accueil (remplace le motif)", name: "hero_image", widget: "image", required: false }
+          - { label: "Deuxième image d'accueil (optionnelle, s'affiche à côté)", name: "hero_image2", widget: "image", required: false }
       - label: "4. Couleurs et police"
         name: "theme"
         file: "data/theme.json"
@@ -73,6 +77,10 @@ collections:
           - { label: "Titre « Notre savoir-faire » (AR)", name: "about_title_ar", widget: "string", required: false }
           - { label: "Texte « Notre savoir-faire » (FR)", name: "about_text", widget: "text", required: false }
           - { label: "Texte « Notre savoir-faire » (AR)", name: "about_text_ar", widget: "text", required: false }
+          - { label: "Titre d'accueil (EN)", name: "hero_title_en", widget: "string", required: false }
+          - { label: "Texte d'accueil (EN)", name: "hero_text_en", widget: "text", required: false }
+          - { label: "Titre « Notre savoir-faire » (EN)", name: "about_title_en", widget: "string", required: false }
+          - { label: "Texte « Notre savoir-faire » (EN)", name: "about_text_en", widget: "text", required: false }
       - label: "6. Avis clients (vrais avis seulement)"
         name: "reviews"
         file: "data/reviews.json"
@@ -86,7 +94,10 @@ collections:
               - { label: "Prénom", name: "name", widget: "string" }
               - { label: "Ville", name: "city", widget: "string", required: false }
               - { label: "Note (1 à 5)", name: "rating", widget: "number", value_type: "int", min: 1, max: 5, default: 5 }
-              - { label: "Avis", name: "text", widget: "text" }
+              - { label: "Avis (texte)", name: "text", widget: "text", required: false }
+              - { label: "Capture d'écran ou photo du client (WhatsApp, Instagram, Etsy...)", name: "image", widget: "image", required: false }
+              - { label: "Source (ex: WhatsApp, Instagram)", name: "source", widget: "string", required: false }
+              - { label: "Date (ex: mars 2026)", name: "date", widget: "string", required: false }
       - label: "7. Barre d'annonce, contact et réseaux"
         name: "extras"
         file: "data/extras.json"
@@ -94,6 +105,7 @@ collections:
           - { label: "Afficher la barre d'annonce", name: "announce_on", widget: "boolean", default: true }
           - { label: "Annonce (FR)", name: "announce_fr", widget: "string", required: false }
           - { label: "Annonce (AR)", name: "announce_ar", widget: "string", required: false }
+          - { label: "Annonce (EN)", name: "announce_en", widget: "string", required: false }
           - { label: "Adresse de l'atelier", name: "address", widget: "string", required: false }
           - { label: "Horaires", name: "hours", widget: "string", required: false }
           - { label: "Lien Instagram (https://...)", name: "instagram", widget: "string", required: false }
@@ -107,7 +119,37 @@ collections:
           - { label: "Titre de la section (AR)", name: "title_ar", widget: "string", required: false }
           - { label: "Sous-titre (FR)", name: "sub", widget: "string", required: false }
           - { label: "Sous-titre (AR)", name: "sub_ar", widget: "string", required: false }
+          - { label: "Titre de la section (EN)", name: "title_en", widget: "string", required: false }
+          - { label: "Sous-titre (EN)", name: "sub_en", widget: "string", required: false }
           - { label: "Lien YouTube (https://youtu.be/...)", name: "youtube", widget: "string", required: false }
           - { label: "OU fichier vidéo mp4 (moins de 20 Mo, prioritaire sur YouTube)", name: "file", widget: "file", required: false }
           - { label: "Image de couverture du mp4", name: "poster", widget: "image", required: false }
           - { label: "Vidéo verticale (téléphone 9:16)", name: "vertical", widget: "boolean", default: false }
+      - label: "9. Questions fréquentes (FAQ)"
+        name: "faq"
+        file: "data/faq.json"
+        fields:
+          - label: "Questions"
+            name: "items"
+            widget: "list"
+            required: false
+            summary: "{{fields.q}}"
+            fields:
+              - { label: "Question (FR)", name: "q", widget: "string" }
+              - { label: "Réponse (FR)", name: "a", widget: "text" }
+              - { label: "Question (AR)", name: "q_ar", widget: "string", required: false }
+              - { label: "Réponse (AR)", name: "a_ar", widget: "text", required: false }
+              - { label: "Question (EN)", name: "q_en", widget: "string", required: false }
+              - { label: "Réponse (EN)", name: "a_en", widget: "text", required: false }
+      - label: "10. Remises par quantité"
+        name: "discounts"
+        file: "data/discounts.json"
+        fields:
+          - label: "Paliers de remise (appliqués automatiquement dans le panier)"
+            name: "tiers"
+            widget: "list"
+            required: false
+            summary: "dès {{fields.qty}} pièces : −{{fields.percent}} %"
+            fields:
+              - { label: "À partir de combien de pièces", name: "qty", widget: "number", value_type: "int", min: 2 }
+              - { label: "Remise (%)", name: "percent", widget: "number", value_type: "int", min: 1, max: 90 }
