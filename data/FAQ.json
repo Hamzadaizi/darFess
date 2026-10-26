@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "q": "Les pièces sont-elles faites à la main ?",
+      "a": "Oui. Chaque pièce est martelée et gravée à la main. De légères variations font partie de son caractère.",
+      "q_ar": "هل القطع مصنوعة يدوياً؟",
+      "a_ar": "نعم. كل قطعة مطروقة ومنقوشة يدوياً، وتفاوتات بسيطة بين القطع جزء من جمالها.",
+      "q_en": "Are the pieces handmade?",
+      "a_en": "Yes. Each piece is hammered and engraved by hand. Slight variations are part of its character."
+    },
+    {
+      "q": "Puis-je faire graver un prénom ou un motif ?",
+      "a": "Oui. Écrivez-nous sur WhatsApp avec la pièce choisie et le texte souhaité, nous vous répondons avec un devis.",
+      "q_ar": "هل يمكنني نقش اسم أو زخرفة؟",
+      "a_ar": "نعم. راسلنا عبر واتساب مع القطعة المختارة والنص المطلوب وسنرسل لك عرض سعر.",
+      "q_en": "Can I have a name or a pattern engraved?",
+      "a_en": "Yes. Message us on WhatsApp with the piece you chose and the text you want, and we will reply with a quote."
+    },
+    {
+      "q": "Comment entretenir le cuivre ?",
+      "a": "Nettoyez avec un citron et du sel, rincez, séchez bien. Pour les bouteilles et verres : eau plate uniquement, sans boissons acides ni très chaudes.",
+      "q_ar": "كيف أعتني بالنحاس؟",
+      "a_ar": "نظفه بالليمون والملح، اشطفه وجففه جيداً. للقنينات والكؤوس: ماء عادي فقط، دون مشروبات حامضة أو ساخنة جداً.",
+      "q_en": "How do I care for copper?",
+      "a_en": "Clean with lemon and salt, rinse and dry well. For bottles and glasses: still water only, no acidic or very hot drinks."
+    },
+    {
+      "q": "Quels sont les délais de livraison ?",
+      "a": "Écrivez-nous sur WhatsApp : nous vous confirmons le délai selon votre ville avant votre commande.",
+      "q_ar": "ما هي مدة التوصيل؟",
+      "a_ar": "راسلنا عبر واتساب وسنؤكد لك المدة حسب مدينتك قبل الطلب.",
+      "q_en": "What are the delivery times?",
+      "a_en": "Message us on WhatsApp: we confirm the timing for your city before you order."
+    }
+  ]
+}
